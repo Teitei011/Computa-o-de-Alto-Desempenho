@@ -8,13 +8,13 @@
 
 namespace chrono = std::chrono;
 
+int N;
 std::pair<int, int> read_arguments(int argc, char *argv[]);
+void matrix_multiplication(double *A, double *B, int N);
 
 // Function for random number generation
  std::default_random_engine generator;
  std::uniform_real_distribution<double> distribution(0.0,1.0);
-
-void show_matrix(double A[][100], int N);
 
 int main(int argc, char *argv[]) {
   auto [N, M] = read_arguments(argc, argv);
@@ -30,44 +30,40 @@ int main(int argc, char *argv[]) {
    chrono::high_resolution_clock::time_point t1, t2;
 
 
-   // Adding Random Value to the matrix
-   for(int i = 0; i < N; i++){
-     for(int j = 0; j < N; j++){
-       A[i][j] = distribution(generator);
-       B[i][j] = distribution(generator);
-     }
-   }
 
+   for (int ii = 0; ii < M; ii++) {
 
-   // Fazendo a Multiplicacao em si
-    t1 = chrono::high_resolution_clock::now();
-       for (int j = 0; j < N; j++){
-        for (int i = 0; i < N; i++){
-          soma = 0;
-           for (int k = 0; k < N; k++){
-               soma += A[i][k] * B[k, j];
-           }
-        }
+     // Adding Random Value to the matrix
+
+     for(int i = 0; i < N; i++){
+       for(int j = 0; j < N; j++){
+         A[i][j] = distribution(generator);
+         B[i][j] = distribution(generator);
        }
-       // soma += A[i, k] * B[k, j];
+     }
 
+     t1 = chrono::high_resolution_clock::now();
 
-       t2 = chrono::high_resolution_clock::now();
+     // Multiplicacao das matrizes
+     double soma;
+     for (int j = 0; j < N; j++){
+      for (int i = 0; i < N; i++){
+        soma = 0;
+         for (int k = 0; k < N; k++){
+             soma += A[i][k] * B[k][j];
+         }
 
-       auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
-       elapsed += dt.count();
+     t2 = chrono::high_resolution_clock::now();
 
-     std::cout << N << " " << elapsed / M / 1e6 << std::endl;
-  return 0;
-}
-
-void show_matrix(double A[][2], int N){
-  for(int i = 0; i < N; i++){
-    for(int j = 0; j < N; j++){
-      std::cout << A[i][j] << ' ';
+     auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
+     elapsed += dt.count();
     }
-    std::cout << '\n';
-   }
+  }
+}
+   // Show timing results
+   std::cout << N << " " << elapsed / M / 1e6 << std::endl;
+
+  return 0;
 }
 
 std::pair<int, int> read_arguments(int argc, char *argv[]) {
