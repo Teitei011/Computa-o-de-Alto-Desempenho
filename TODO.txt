@@ -1,0 +1,8 @@
+
+Part1:
+
+* Receber parametros como argumentos          (0)
+* Gerar as matrizes com os valores aleatorios (X)
+* Gerador de numeros randomicos de 0-1        (X)
+* Multiplicacao em si                         (0)
+* Colocar o timer                             (0)
