@@ -3,8 +3,3 @@
 500	5.1E-06
 1000	5.6E-06
 1500	5.8E-06
-
-
-https://www.quora.com/How-can-we-use-cache-s-for-optimization-of-matrix-multiplication
-
-https://stackoverflow.com/questions/13312625/cache-friendly-method-to-multiply-two-matrices
