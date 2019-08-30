@@ -62,7 +62,10 @@ int main(int argc, char *argv[]) {
 
      // std::cout << "\n\nValores da matrix A: " << '\n';
      // show_matrix(N, A);
-
+     // transposta(N, A);
+     // std::cout << "\n\n\n" << '\n';
+     // transposta(N, A);
+     // show_matrix(N, A);
 
      // std::cout << "\n\nValores da matrix B: " << '\n';
      // show_matrix(N, B);
@@ -96,15 +99,6 @@ void show_matrix(int N, double **A){
   }
 }
 
-
-// Acho que eu fiz algo de errado nesta multiplicacao de matrizes
-
-// Tenho que fazer a transposta de B
-// for n = 0 to N - 2
-//     for m = n + 1 to N - 1
-//         swap A(n,m) with A(m,n)
-
-
 // TODO: Verificar se a transposta e a multiplicacao estão sendo feitas da forma correta
 
 
@@ -113,8 +107,8 @@ void matrix_product(int N, double **A, double **B, double **C){
 
   transposta(N, B);
 
-  for (int j = 0; j < N; j++){
-   for (int i = 0; i < N; i++){
+  for (int i = 0; i < N; i++){
+   for (int j = 0; j < N; j++){
      soma = 0;
       for (int k = 0; k < N; k++){
           soma += A[i][k] * B[k][j];
@@ -126,6 +120,8 @@ void matrix_product(int N, double **A, double **B, double **C){
 }
 
 
+
+// Function that transpost de matrix in line
 void transposta(int N, double **A){
   for (int i = 0; i < N - 2; i++){
     for (int j = N + 1; j < N - 1; j--){
@@ -134,26 +130,6 @@ void transposta(int N, double **A){
   }
 }
 
-
-//
-// void matrix_product(int N, double **A, double  **B, double **C)
-// {
-//     int j;
-//    for (int i = 0; i < N; i++)
-//    {
-//       double t = A[i][0];
-//       for (j = 0; j < N; j++)
-//          C[i][j] = t * B[0][j];
-//
-//       for (int k = 1; k < N; k++)
-//       {
-//          double s = 0;
-//          for (int j = 0; j < N; j++ )
-//             s += A[i][k] * B[k][j];
-//          C[i][j] = s;
-//       }
-//    }
-// }
 
 std::pair<int, int> read_arguments(int argc, char *argv[]) {
   int N, M;

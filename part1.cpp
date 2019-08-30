@@ -59,9 +59,8 @@ int main(int argc, char *argv[]) {
        }
      }
 
-     // std::cout << "\n\nValores da matrix A: " << '\n';
-     // show_matrix(N, A);
-
+     std::cout << "\n\nValores da matrix A: " << '\n';
+     show_matrix(N, A);
 
      // std::cout << "\n\nValores da matrix B: " << '\n';
      // show_matrix(N, B);

@@ -59,8 +59,9 @@ int main(int argc, char *argv[]) {
        }
      }
 
-     // std::cout << "\n\nValores da matrix A: " << '\n';
-     // show_matrix(N, A);
+     std::cout << "\n\nValores da matrix A: " << '\n';
+     show_matrix(N, A);
+
 
 
      // std::cout << "\n\nValores da matrix B: " << '\n';
@@ -96,6 +97,8 @@ void show_matrix(int N, double **A){
 }
 
 
+
+// TODO: Don't know if I made that rigth, probably not
 int matrix_product(int N, double **A, double **B, double **C)
 {
   double soma;
