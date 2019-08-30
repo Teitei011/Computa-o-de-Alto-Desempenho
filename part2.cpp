@@ -13,6 +13,8 @@ std::pair<int, int> read_arguments(int argc, char *argv[]);
 void matrix_product(int N, double  **A, double **B, double **C);
 void show_matrix(int N, double **A);
 void transposta(int N, double **A);
+void create_random_matrix(int N, double **A, double **B);
+
 
 
 int main(int argc, char *argv[]) {
@@ -53,12 +55,8 @@ int main(int argc, char *argv[]) {
 
      // Adding Random Value to the matrix
 
-     for(int i = 0; i < N; i++){
-       for(int j = 0; j < N; j++){
-         A[i][j] = dis(gen);
-         B[i][j] = dis(gen);
-       }
-     }
+     create_random_matrix(N, A, B);
+
 
      // std::cout << "\n\nValores da matrix A: " << '\n';
      // show_matrix(N, A);
@@ -98,6 +96,16 @@ void show_matrix(int N, double **A){
     std::cout << '\n';
   }
 }
+
+void create_random_matrix(int N, double **A, double **B){
+  for(int i = 0; i < N; i++){
+    for(int j = 0; j < N; j++){
+      A[i][j] = dis(gen);
+      B[i][j] = dis(gen);
+    }
+  }
+}
+
 
 // TODO: Verificar se a transposta e a multiplicacao estão sendo feitas da forma correta
 

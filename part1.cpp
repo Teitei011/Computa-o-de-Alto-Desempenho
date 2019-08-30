@@ -11,6 +11,8 @@ namespace chrono = std::chrono;
 int N;
 std::pair<int, int> read_arguments(int argc, char *argv[]);
 int matrix_product(int N, double  **A, double **B, double **C);
+void create_random_matrix(int N, double **A, double **B);
+
 void show_matrix(int N, double **A);
 
 
@@ -52,12 +54,7 @@ int main(int argc, char *argv[]) {
 
      // Adding Random Value to the matrix
 
-     for(int i = 0; i < N; i++){
-       for(int j = 0; j < N; j++){
-         A[i][j] = dis(gen);
-         B[i][j] = dis(gen);
-       }
-     }
+     create_random_matrix(N, A, B);
 
      std::cout << "\n\nValores da matrix A: " << '\n';
      show_matrix(N, A);
@@ -83,6 +80,15 @@ int main(int argc, char *argv[]) {
    std::cout << N << " " << elapsed / M / 1e6 << std::endl;
 
   return 0;
+}
+
+void create_random_matrix(int N, double **A, double **B){
+  for(int i = 0; i < N; i++){
+    for(int j = 0; j < N; j++){
+      A[i][j] = dis(gen);
+      B[i][j] = dis(gen);
+    }
+  }
 }
 
 void show_matrix(int N, double **A){
