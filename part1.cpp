@@ -10,7 +10,7 @@ namespace chrono = std::chrono;
 
 int N;
 std::pair<int, int> read_arguments(int argc, char *argv[]);
-int matrix_product(int N, double  **A, double **B);
+int matrix_product(int N, double  **A, double **B, double **C);
 void show_matrix(int N, double **A);
 
 
@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
      t1 = chrono::high_resolution_clock::now();
 
      // Multiplicacao das matrizes
-     matrix_product(N, A, B);
+     matrix_product(N, A, B, C);
 
     // std::cout << "\n\nValores da matrix C: " << '\n';
     // show_matrix(N, C);
@@ -96,16 +96,16 @@ void show_matrix(int N, double **A){
 }
 
 
-int matrix_product(int N, double **A, double **B)
+int matrix_product(int N, double **A, double **B, double **C)
 {
   double soma;
-  for (int j = 0; j < N; j++){
-   for (int i = 0; i < N; i++){
+  for (int i = 0; i < N; i++){
+   for (int j = 0; j < N; j++){
      soma = 0;
       for (int k = 0; k < N; k++){
           soma += A[i][k] * B[k][j];
       }
-      // C[i][j] = soma;
+      C[i][j] = soma;
     }
   }
   return 0;
