@@ -100,12 +100,12 @@ int matrix_product(int N, double **A, double **B, double **C)
 {
   double soma;
   for (int i = 0; i < N; i++){
-   for (int j = 0; j < N; j++){
+   for (int k = 0; k < N; k++){
      soma = 0;
-      for (int k = 0; k < N; k++){
-          soma += A[i][k] * B[k][j];
+      for (int j = 0; j < N; j++){
+          soma += A[i][j] * B[j][k];
       }
-      C[i][j] = soma;
+      C[i][k] = soma;
     }
   }
   return 0;
