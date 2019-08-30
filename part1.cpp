@@ -10,20 +10,37 @@ namespace chrono = std::chrono;
 
 int N;
 std::pair<int, int> read_arguments(int argc, char *argv[]);
-void matrix_multiplication(double *A, double *B, int N);
+int matrix_product(int N, double  **A, double **B);
+void show_matrix(int N, double **A);
 
-// Function for random number generation
- std::default_random_engine generator;
- std::uniform_real_distribution<double> distribution(0.0,1.0);
 
 int main(int argc, char *argv[]) {
   auto [N, M] = read_arguments(argc, argv);
 
 
    // Creating the matrix
-   double A[N][N];
-   double B[N][N];
+   double **A = new double *[N];
+   double *SA = new double [N*N];
 
+   double **B = new double *[N];
+   double *SB = new double [N*N];
+
+   double **C = new double *[N];
+   double *SC = new double [N*N];
+
+
+   // linking pointers
+   for (int i = 0; i < N; i++) {
+     A[i] = &SA[i*N];
+     B[i] = &SB[i*N];
+     C[i] = &SC[i*N];
+   }
+
+
+   // function for random number generation
+   std::random_device entropy;
+   std::mt19937 gen(entropy()); // Randomness generator
+   std::uniform_real_distribution<double> dis(0, 1);
 
    // The time monitor
    double elapsed = 0;
@@ -37,32 +54,60 @@ int main(int argc, char *argv[]) {
 
      for(int i = 0; i < N; i++){
        for(int j = 0; j < N; j++){
-         A[i][j] = distribution(generator);
-         B[i][j] = distribution(generator);
+         A[i][j] = dis(gen);
+         B[i][j] = dis(gen);
        }
      }
+
+     // std::cout << "\n\nValores da matrix A: " << '\n';
+     // show_matrix(N, A);
+
+
+     // std::cout << "\n\nValores da matrix B: " << '\n';
+     // show_matrix(N, B);
 
      t1 = chrono::high_resolution_clock::now();
 
      // Multiplicacao das matrizes
-     double soma;
-     for (int j = 0; j < N; j++){
-      for (int i = 0; i < N; i++){
-        soma = 0;
-         for (int k = 0; k < N; k++){
-             soma += A[i][k] * B[k][j];
-         }
+     matrix_product(N, A, B);
+
+    // std::cout << "\n\nValores da matrix C: " << '\n';
+    // show_matrix(N, C);
 
      t2 = chrono::high_resolution_clock::now();
 
      auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
      elapsed += dt.count();
     }
-  }
-}
+
    // Show timing results
    std::cout << N << " " << elapsed / M / 1e6 << std::endl;
 
+  return 0;
+}
+
+void show_matrix(int N, double **A){
+  for (int i = 0; i < N; i++){
+    for (int j = 0; j < N; j++){
+      std::cout << A[i][j] << ' ';
+    }
+    std::cout << '\n';
+  }
+}
+
+
+int matrix_product(int N, double **A, double **B)
+{
+  double soma;
+  for (int j = 0; j < N; j++){
+   for (int i = 0; i < N; i++){
+     soma = 0;
+      for (int k = 0; k < N; k++){
+          soma += A[i][k] * B[k][j];
+      }
+      // C[i][j] = soma;
+    }
+  }
   return 0;
 }
 
