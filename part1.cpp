@@ -15,6 +15,11 @@ void create_random_matrix(int N, double **A, double **B);
 
 void show_matrix(int N, double **A);
 
+// function for random number generation
+std::random_device entropy;
+std::mt19937 gen(entropy()); // Randomness generator
+std::uniform_real_distribution<double> dis(0, 1);
+
 
 int main(int argc, char *argv[]) {
   auto [N, M] = read_arguments(argc, argv);
@@ -39,10 +44,6 @@ int main(int argc, char *argv[]) {
    }
 
 
-   // function for random number generation
-   std::random_device entropy;
-   std::mt19937 gen(entropy()); // Randomness generator
-   std::uniform_real_distribution<double> dis(0, 1);
 
    // The time monitor
    double elapsed = 0;
@@ -56,8 +57,8 @@ int main(int argc, char *argv[]) {
 
      create_random_matrix(N, A, B);
 
-     std::cout << "\n\nValores da matrix A: " << '\n';
-     show_matrix(N, A);
+     // std::cout << "\n\nValores da matrix A: " << '\n';
+     // show_matrix(N, A);
 
      // std::cout << "\n\nValores da matrix B: " << '\n';
      // show_matrix(N, B);
