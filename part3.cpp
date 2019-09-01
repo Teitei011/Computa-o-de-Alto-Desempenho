@@ -14,10 +14,13 @@ int matrix_product(int N, double  **A, double **B, double **C);
 void create_random_matrix(int N, double **A, double **B);
 void show_matrix(int N, double **A);
 
+// function for random number generation
+std::random_device entropy;
+std::mt19937 gen(entropy()); // Randomness generator
+std::uniform_real_distribution<double> dis(0, 1);
 
 int main(int argc, char *argv[]) {
   auto [N, M] = read_arguments(argc, argv);
-
 
    // Creating the matrix
    double **A = new double *[N];
@@ -29,7 +32,6 @@ int main(int argc, char *argv[]) {
    double **C = new double *[N];
    double *SC = new double [N*N];
 
-
    // linking pointers
    for (int i = 0; i < N; i++) {
      A[i] = &SA[i*N];
@@ -37,17 +39,9 @@ int main(int argc, char *argv[]) {
      C[i] = &SC[i*N];
    }
 
-
-   // function for random number generation
-   std::random_device entropy;
-   std::mt19937 gen(entropy()); // Randomness generator
-   std::uniform_real_distribution<double> dis(0, 1);
-
    // The time monitor
    double elapsed = 0;
    chrono::high_resolution_clock::time_point t1, t2;
-
-
 
    for (int ii = 0; ii < M; ii++) {
 
@@ -55,11 +49,8 @@ int main(int argc, char *argv[]) {
 
      create_random_matrix(N, A, B);
 
-
      std::cout << "\n\nValores da matrix A: " << '\n';
      show_matrix(N, A);
-
-
 
      // std::cout << "\n\nValores da matrix B: " << '\n';
      // show_matrix(N, B);
@@ -101,7 +92,6 @@ void create_random_matrix(int N, double **A, double **B){
     }
   }
 }
-
 
 // TODO: Don't know if I made that rigth, probably not
 int matrix_product(int N, double **A, double **B, double **C)
