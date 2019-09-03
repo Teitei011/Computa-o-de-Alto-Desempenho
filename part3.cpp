@@ -49,8 +49,8 @@ int main(int argc, char *argv[]) {
 
      create_random_matrix(N, A, B);
 
-     std::cout << "\n\nValores da matrix A: " << '\n';
-     show_matrix(N, A);
+     // std::cout << "\n\nValores da matrix A: " << '\n';
+     // show_matrix(N, A);
 
      // std::cout << "\n\nValores da matrix B: " << '\n';
      // show_matrix(N, B);
@@ -93,7 +93,7 @@ void create_random_matrix(int N, double **A, double **B){
   }
 }
 
-// TODO: Don't know if I made that rigth, probably not
+// TODO: Don't know if I made that rigth, probably not ! It´s wrong
 int matrix_product(int N, double **A, double **B, double **C)
 {
   double soma;
@@ -101,7 +101,7 @@ int matrix_product(int N, double **A, double **B, double **C)
    for (int k = 0; k < N; k++){
      soma = 0;
       for (int j = 0; j < N; j++){
-          soma += A[i][j] * B[j][k];
+          soma += A[i][k] * B[k][j];
       }
       C[i][k] = soma;
     }
