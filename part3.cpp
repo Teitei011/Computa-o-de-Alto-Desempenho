@@ -94,15 +94,22 @@ void create_random_matrix(int N, double **A, double **B){
   }
 }
 
-// MULTIPLICACAO ERRADA
 int matrix_product(int N, double **A, double **B, double **C)
 {
   double soma;
+
+  // Ver se é realmente necessário inicializar todos os valores da matriz c com zero, pq acho que isso acontece de forma automatica
+  for (int i = 0; i < N; i++){
+    for (int j = 0; j < N; j++){
+      C[i][j] = 0.;
+    }
+  }
+
   for (int i = 0; i < N; i++){
    for (int k = 0; k < N; k++){
      soma = 0;
       for (int j = 0; j < N; j++){
-          soma += A[i][k] * B[k][j];
+          soma += A[i][j] * B[j][k];
       }
       C[i][k] = soma;
     }
