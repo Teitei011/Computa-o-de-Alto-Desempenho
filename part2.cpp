@@ -17,8 +17,9 @@ void create_random_matrix(int N, double **A, double **B);
 
 
  // function for random number generation
- std::random_device entropy;
- std::mt19937 gen(entropy()); // Randomness generator
+ // std::random_device entropy;
+ // std::mt19937 gen(entropy()); // Randomness generator
+ std::mt19937 gen(10414866); // Randomness generator
  std::uniform_real_distribution<double> dis(0, 1);
 
 
@@ -57,7 +58,6 @@ int main(int argc, char *argv[]) {
      // Adding Random Value to the matrix
 
      create_random_matrix(N, A, B);
-
 
      // std::cout << "\n\nValores da matrix A: " << '\n';
      // show_matrix(N, A);
@@ -108,16 +108,15 @@ void create_random_matrix(int N, double **A, double **B){
 }
 
 
-// TODO: Verificar se a transposta e a multiplicacao estão sendo feitas da forma correta
-
+// Multiplicacao de matrizes funcionando
 
 void matrix_product(int N, double **A, double **B, double **C){
   double soma;
 
   transposta(N, B);
 
-  for (int i = 0; i < N; i++){
-   for (int j = 0; j < N; j++){
+  for (int j = 0; j < N; j++){
+   for (int i = 0; i < N; i++){
      soma = 0;
       for (int k = 0; k < N; k++){
           soma += A[i][k] * B[k][j];

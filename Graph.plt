@@ -7,7 +7,7 @@ set title "Primeiro Método - Log"
 set ylabel "time (s)"
 set xlabel "N"
 
-set xrange[100:2000]
+set xrange[100:1600]
 
 set terminal png
 set output "part1_log.png"
