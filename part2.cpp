@@ -17,9 +17,9 @@ void create_random_matrix(int N, double **A, double **B);
 
 
  // function for random number generation
- // std::random_device entropy;
- // std::mt19937 gen(entropy()); // Randomness generator
- std::mt19937 gen(10414866); // Randomness generator
+ std::random_device entropy;
+ std::mt19937 gen(entropy()); // Randomness generator
+ // std::mt19937 gen(10414866); // Randomness generator
  std::uniform_real_distribution<double> dis(0, 1);
 
 
