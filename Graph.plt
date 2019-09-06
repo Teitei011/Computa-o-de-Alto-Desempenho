@@ -4,11 +4,11 @@ set grid
 
 # set title "Primeiro Método - Log"
 # set title "Segundo Método"
-set title "Terceiro Método -Logscale"
+set title "Terceiro Método"
 set ylabel "time (s)"
 set xlabel "N"
 
-set xrange[100:1600]
+set xrange[100:2000]
 
 set terminal png
 set output "part3.png"
