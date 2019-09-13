@@ -19,7 +19,6 @@ void create_random_matrix(int N, double **A, double **B);
  // function for random number generation
  std::random_device entropy;
  std::mt19937 gen(entropy()); // Randomness generator
- // std::mt19937 gen(10414866); // Randomness generator
  std::uniform_real_distribution<double> dis(0, 1);
 
 
@@ -59,23 +58,11 @@ int main(int argc, char *argv[]) {
 
      create_random_matrix(N, A, B);
 
-     // std::cout << "\n\nValores da matrix A: " << '\n';
-     // show_matrix(N, A);
-     // transposta(N, A);
-     // std::cout << "\n\n\n" << '\n';
-     // transposta(N, A);
-     // show_matrix(N, A);
-
-     // std::cout << "\n\nValores da matrix B: " << '\n';
-     // show_matrix(N, B);
 
      t1 = chrono::high_resolution_clock::now();
 
      // Multiplicacao das matrizes
      matrix_product(N, A, B, C);
-
-    // std::cout << "\n\nValores da matrix C: " << '\n';
-    // show_matrix(N, C);
 
      t2 = chrono::high_resolution_clock::now();
 

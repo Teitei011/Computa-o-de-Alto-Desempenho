@@ -10,18 +10,15 @@ namespace chrono = std::chrono;
 
 int N;
 std::pair<int, int> read_arguments(int argc, char *argv[]);
-void matrix_product(int N, double  **A, double **B, double **C);
-void show_matrix(int N, double **A);
-void transposta(int N, double **A);
+int matrix_product(int N, double  **A, double **B, double **C);
 void create_random_matrix(int N, double **A, double **B);
 
+void show_matrix(int N, double **A);
 
- // function for random number generation
- std::random_device entropy;
- std::mt19937 gen(entropy()); // Randomness generator
- // std::mt19937 gen(10414866); // Randomness generator
- std::uniform_real_distribution<double> dis(0, 1);
-
+// function for random number generation
+std::random_device entropy;
+std::mt19937 gen(entropy()); // Randomness generator
+std::uniform_real_distribution<double> dis(0, 1);
 
 int main(int argc, char *argv[]) {
   auto [N, M] = read_arguments(argc, argv);
@@ -59,24 +56,13 @@ int main(int argc, char *argv[]) {
 
      create_random_matrix(N, A, B);
 
-     // std::cout << "\n\nValores da matrix A: " << '\n';
-     // show_matrix(N, A);
-     // transposta(N, A);
-     // std::cout << "\n\n\n" << '\n';
-     // transposta(N, A);
-     // show_matrix(N, A);
-
-     // std::cout << "\n\nValores da matrix B: " << '\n';
-     // show_matrix(N, B);
 
      t1 = chrono::high_resolution_clock::now();
 
      // Multiplicacao das matrizes
      matrix_product(N, A, B, C);
 
-    // std::cout << "\n\nValores da matrix C: " << '\n';
-    // show_matrix(N, C);
-
+  
      t2 = chrono::high_resolution_clock::now();
 
      auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
@@ -89,15 +75,6 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-void show_matrix(int N, double **A){
-  for (int i = 0; i < N; i++){
-    for (int j = 0; j < N; j++){
-      std::cout << A[i][j] << ' ';
-    }
-    std::cout << '\n';
-  }
-}
-
 void create_random_matrix(int N, double **A, double **B){
   for(int i = 0; i < N; i++){
     for(int j = 0; j < N; j++){
@@ -107,16 +84,21 @@ void create_random_matrix(int N, double **A, double **B){
   }
 }
 
+void show_matrix(int N, double **A){
+  for (int i = 0; i < N; i++){
+    for (int j = 0; j < N; j++){
+      std::cout << A[i][j] << ' ';
+    }
+    std::cout << '\n';
+  }
+}
 
-// Multiplicacao de matrizes funcionando
 
-void matrix_product(int N, double **A, double **B, double **C){
+int matrix_product(int N, double **A, double **B, double **C)
+{
   double soma;
-
-  transposta(N, B);
-
-  for (int j = 0; j < N; j++){
-   for (int i = 0; i < N; i++){
+  for (int i = 0; i < N; i++){
+   for (int j = 0; j < N; j++){
      soma = 0;
       for (int k = 0; k < N; k++){
           soma += A[i][k] * B[k][j];
@@ -124,20 +106,8 @@ void matrix_product(int N, double **A, double **B, double **C){
       C[i][j] = soma;
     }
   }
-  transposta(N, B);
+  return 0;
 }
-
-
-
-// Function that transpost the matrix in-line
-void transposta(int N, double **A){
-  for (int i = 0; i < N - 2; i++){
-    for (int j = N + 1; j < N - 1; j--){
-      A[i][j] = A[j][i];
-    }
-  }
-}
-
 
 std::pair<int, int> read_arguments(int argc, char *argv[]) {
   int N, M;
