@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Programas sem a otimiza\IeC {\c c}\IeC {\~a}o}{1}% 
+\contentsline {section}{\numberline {2}Programas com a otimiza\IeC {\c c}\IeC {\~a}o}{2}% 
+\contentsline {section}{\numberline {3}Otimiza\IeC {\c c}\IeC {\~o}es vistas individualmentes}{3}% 
+\contentsline {subsection}{\numberline {3.1}Bubble Sort}{3}% 
+\contentsline {subsection}{\numberline {3.2}Quick Sort}{4}% 
+\contentsline {subsection}{\numberline {3.3}cQuick Sort}{5}% 
+\contentsline {subsection}{\numberline {3.4}Stdsort}{6}% 
+\contentsline {section}{\numberline {4}Conclus\IeC {\~a}o}{6}% 
+\contentsline {section}{\numberline {5}Bibliografia}{9}% 

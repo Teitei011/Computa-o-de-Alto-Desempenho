@@ -1,0 +1,12 @@
+set title "Without Optimization"
+
+
+
+set grid
+set ylabel "Time (s)"
+set xlabel "Numbers"
+
+set terminal png
+set output "withoutOptimization.png"
+
+plot "bubble0.dat" with linespoints lw 2 t "bubble", "quick0.dat" with linespoints lw 2 t "quick", "stdsort0.dat" with linespoints lw 2 t "stdsort", "cquick0.dat" with linespoints lw 2 t "cquick"

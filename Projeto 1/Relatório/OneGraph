@@ -1,0 +1,12 @@
+set title "Quick vs std::sort "
+
+set logscale
+
+set grid
+set ylabel "Time (s)"
+set xlabel "Numbers"
+
+set terminal png
+set output "quick_vs_stdsort.png"
+
+plot "stdsort1.dat" with linespoints lw 2 t "std::sort", "quick1.dat" t "quick" with linespoints lw 2
