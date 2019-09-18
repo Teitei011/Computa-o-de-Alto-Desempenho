@@ -30,10 +30,7 @@ void Graph::show_graph() {
   std::cout << '\n';
 }
 
-void Graph::find_triangle(){
-
-}
-
+void Graph::find_triangle() {}
 
 void Graph::addEdge(int origem, int destino) {
   adj.insert(origem, destino);
@@ -53,23 +50,28 @@ std::string read_argument(int argc, char *argv[]) {
   return filename;
 }
 
+std::vector<int> read_numbers(std::string filename) {
+  std::vector<int> numbers;
+  std::ifstream infile;
+  infile.open(filename);
+
+  if (infile.is_open()) {
+    int num;
+    while (infile >> num) {
+      numbers.push_back(num);
+    }
+  }
+  return numbers;
+}
 
 int main(int argc, char *argv[]) {
 
   std::string filename = read_argument(argc, argv);
-  std::cout << "The filename is: " << filename << '\n';
+  // std::cout << "The filename is: " << filename << '\n';
 
-  std::ifstream infile;
-  infile.open(filename);
-
-  if (infile.is_open())
-  {
-      int num;
-      while(infile >> num)
-      {
-          std::cout << num << '\n';
-      }
-  }
+  std::vector<int> numbers;
+  numbers = read_numbers(filename);
+  Graph g();
 
   // The time monitor
   double elapsed = 0;
@@ -77,7 +79,6 @@ int main(int argc, char *argv[]) {
 
   t1 = chrono::high_resolution_clock::now();
 
-  // Graph g();
   // g.addEdge(0, 1);
   // g.addEdge(0, 2);
   // g.addEdge(1, 2);
