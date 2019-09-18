@@ -67,17 +67,18 @@ std::vector<int> read_numbers(std::string filename) {
 int main(int argc, char *argv[]) {
 
   std::string filename = read_argument(argc, argv);
-  // std::cout << "The filename is: " << filename << '\n';
+  std::cout << "The filename is: " << filename << '\n';
 
   std::vector<int> numbers;
   numbers = read_numbers(filename);
-  Graph g();
 
   // The time monitor
   double elapsed = 0;
   chrono::high_resolution_clock::time_point t1, t2;
 
   t1 = chrono::high_resolution_clock::now();
+
+  Graph g(); // Inicializando o grapho
 
   // g.addEdge(0, 1);
   // g.addEdge(0, 2);
@@ -88,9 +89,10 @@ int main(int argc, char *argv[]) {
   t2 = chrono::high_resolution_clock::now();
 
   auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
+  elapsed += dt.count();
 
   // Show timing results
-  // std::cout << "Time taken: " << dt  << std::endl;
+  std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
 
   // g.show_graph();
 
