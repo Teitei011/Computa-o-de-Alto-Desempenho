@@ -8,16 +8,28 @@
 #include <string>
 #include <vector>
 
+namespace chrono = std::chrono;
+
 class Graph
 {
-    std::vector<int> *adjLists;
+    int _size;
+    std::vector<int> adjLists;
 
 public:
     Graph(int V);
-    void addEdge(int src, int dest);
+    void addEdge(int origem, int destino);
     std::vector<int> find_triangles();
 };
 
+Graph::Graph(int V){
+  _size = V;
+  adjLists.reserve(V); // Alocate just the rigth amount of space for all the vertices
+}
+
+void Graph::addEdge(int origem, int destino){
+  adjLists[origem].push_back(destino);
+  adjLists[destino].push_back(origem);
+}
 
 std::string read_argument(int argc, char *argv[]) {
   std::string filename;
@@ -33,8 +45,11 @@ std::string read_argument(int argc, char *argv[]) {
 }
 
  std::pair <int , std::vector<int>> read_numbers(std::string filename) {
+
+  std::pair<int, std::vector<int>> data;
+
   std::vector<int> numbers;
-  int the_higher_number{0};
+  int the_highest_number{0};
 
   std::ifstream infile;
   infile.open(filename);
@@ -44,13 +59,16 @@ std::string read_argument(int argc, char *argv[]) {
     while (infile >> num) {
 
 
-      if (the_higher_number > num)
-        the_higher_number = num;
+      if (the_highest_number > num)
+        the_highest_number = num;
 
       numbers.push_back(num);
     }
   }
-  return the_higher_number, numbers;
+  data.first = the_highest_number;
+  data.second = numbers;
+  
+  return data;
 }
 
 int main(int argc, char *argv[]) {
@@ -59,7 +77,9 @@ int main(int argc, char *argv[]) {
   std::cout << "The filename is: " << filename << '\n';
 
   std::vector<int> numbers;
-  numbers = read_numbers(filename);
+  int the_highest_number;
+
+  the_highest_number, numbers = read_numbers(filename);
 
   // The time monitor
   double elapsed = 0;
@@ -67,16 +87,18 @@ int main(int argc, char *argv[]) {
 
   t1 = chrono::high_resolution_clock::now();
 
-  Graph g(); // Inicializando o grapho
+  Graph g(int the_highest_number); // Inicializando o grapho
 
   // Colocando os dados nele
   int buffer{-1};
-  for (std::vector<int>::iterator it = numbers.begin() ; it != numbers.end(); ++it){
+  int inserir;
+  for (int i = 0; i < numbers.size(); i++){
     if (buffer == -1){
-      buffer = *it;
+      buffer = numbers[i];
     }else{
-      g.addEdge(buffer, *it);
-      g.addEdge(*it, buffer);
+      inserir = numbers[i];
+      g.addEdge(buffer, inserir);
+      g.addEdge(inserir, buffer);
     }
  }
  std::cout << '\n';
