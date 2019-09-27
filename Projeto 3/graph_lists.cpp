@@ -12,7 +12,7 @@ namespace chrono = std::chrono;
 std::string read_argument(int argc, char *argv[]);
 
 class Graph {
-  std::vector<int> *adj;
+  std::vector<int> adj;
 
 public:
   Graph();
@@ -33,7 +33,7 @@ void Graph::show_graph() {
 }
 
 void Graph::find_triangle() {
-  
+
 }
 
 void Graph::addEdge(int origem, int destino) {
