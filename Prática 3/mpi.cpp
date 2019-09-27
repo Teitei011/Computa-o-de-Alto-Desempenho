@@ -15,16 +15,16 @@ int main(int argc, char *argv[]) {
       std::cout << "O processo " << rank << " esta entre os primeiros." << '\n';
     }else{
       std::cout << "O processo " << rank << " esta entre os ultimos." << '\n';
-    } 
+    }
 
-  } else{ // COndicao impar
+  } else{ // Condicao impar
     if(rank < (quantos - 1) / 2){
       std::cout << "O processo " << rank << " esta entre os primeiros." << '\n';
-    } else if(rank != quantos - 1){
-      std::cout << "O processo " << rank << " esta entre os ultimos." << '\n';
+    } else if(rank == quantos - 1){
+      std::cout << "O processo " << rank << " e o lanterninha." << '\n';
     }
     else{
-      std::cout << "O processo " << rank << " e o lanterninha." << '\n';
+      std::cout << "O processo " << rank << " esta entre os ultimos." << '\n';
     }
   }
 
