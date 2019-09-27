@@ -14,22 +14,21 @@ int main(int argc, char *argv[]) {
     if (rank < quantos / 2){
       std::cout << "O processo " << rank << " esta entre os primeiros." << '\n';
     }else{
-      std::cout << "O processo " << rank << "esta entre os ultimos." << '\n';
-    }
+      std::cout << "O processo " << rank << " esta entre os ultimos." << '\n';
+    } 
 
   } else{ // COndicao impar
     if(rank < (quantos - 1) / 2){
-      std::cout << "O processo " << rank << "esta entre os primeiros." << '\n';
-    } else if(rank != quantos){
-      std::cout << "O processo " << rank << "esta entre os ultimos." << '\n';
+      std::cout << "O processo " << rank << " esta entre os primeiros." << '\n';
+    } else if(rank != quantos - 1){
+      std::cout << "O processo " << rank << " esta entre os ultimos." << '\n';
     }
     else{
-      std::cout << "O processo " << " e o lanterninha." << '\n';
+      std::cout << "O processo " << rank << " e o lanterninha." << '\n';
     }
   }
 
-  std::cout << "Processo " << rank << " de " << quantos << " rodando."
-            << std::endl;
+  // std::cout << "Processo " << rank << " de " << quantos << " rodando." << std::endl;
 
   MPI_Finalize();
   return 0;
