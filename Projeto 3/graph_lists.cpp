@@ -21,9 +21,7 @@ public:
   void addEdge(int origem, int destino);
 };
 
-void Graph::Graph() {
-
-}
+void Graph::Graph() {}
 
 void Graph::show_graph() {
   std::cout << "Graph contains: ";
@@ -32,9 +30,7 @@ void Graph::show_graph() {
   std::cout << '\n';
 }
 
-void Graph::find_triangle() {
-
-}
+void Graph::find_triangle() {}
 
 void Graph::addEdge(int origem, int destino) {
   adj.insert(origem, destino);
@@ -86,15 +82,16 @@ int main(int argc, char *argv[]) {
 
   // Colocando os dados nele
   int buffer{-1};
-  for (std::vector<int>::iterator it = numbers.begin() ; it != numbers.end(); ++it){
-    if (buffer == -1){
+  for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end();
+       ++it) {
+    if (buffer == -1) {
       buffer = *it;
-    }else{
+    } else {
       g.addEdge(buffer, *it);
       g.addEdge(*it, buffer);
     }
- }
- std::cout << '\n';
+  }
+  std::cout << '\n';
 
   // g.addEdge(0, 1);
   // g.addEdge(0, 2);

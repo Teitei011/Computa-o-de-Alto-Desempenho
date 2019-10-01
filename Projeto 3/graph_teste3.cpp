@@ -8,28 +8,32 @@
 #include <string>
 #include <vector>
 
+#include <typeinfo>
+
 namespace chrono = std::chrono;
 
-class Graph
-{
-    int _size;
-    std::vector<int> adjLists;
+class Graph {
+  int _size;
+  std::vector<int> adjLists;
 
 public:
-    Graph(int V);
-    void addEdge(int origem, int destino);
-    std::vector<int> find_triangles();
+  Graph(int V);
+  void addEdge(int origem, int destino);
+  std::vector<int> find_triangles();
 };
 
-Graph::Graph(int V){
+Graph::Graph(int V) {
   _size = V;
-  adjLists.reserve(V); // Alocate just the rigth amount of space for all the vertices
+  adjLists.reserve(
+      V); // Alocate just the rigth amount of space for all the vertices
 }
 
-void Graph::addEdge(int origem, int destino){
-  adjLists[origem].push_back(destino);
-  adjLists[destino].push_back(origem);
-}
+// void Graph::addEdge(int origem, int destino) {
+//   adjLists[origem].push_back(destino);
+//   adjLists[destino].push_back(origem);
+// }
+
+std::vector<int> Graph::find_triangles() {}
 
 std::string read_argument(int argc, char *argv[]) {
   std::string filename;
@@ -44,8 +48,7 @@ std::string read_argument(int argc, char *argv[]) {
   return filename;
 }
 
- std::pair <int , std::vector<int>> read_numbers(std::string filename) {
-
+std::pair<int, std::vector<int>> read_numbers(std::string filename) {
   std::pair<int, std::vector<int>> data;
 
   std::vector<int> numbers;
@@ -57,8 +60,6 @@ std::string read_argument(int argc, char *argv[]) {
   if (infile.is_open()) {
     int num;
     while (infile >> num) {
-
-
       if (the_highest_number > num)
         the_highest_number = num;
 
@@ -67,7 +68,8 @@ std::string read_argument(int argc, char *argv[]) {
   }
   data.first = the_highest_number;
   data.second = numbers;
-  
+
+  infile.close();
   return data;
 }
 
@@ -78,8 +80,11 @@ int main(int argc, char *argv[]) {
 
   std::vector<int> numbers;
   int the_highest_number;
+  std::pair<int, std::vector<int>> data;
 
-  the_highest_number, numbers = read_numbers(filename);
+  data = read_numbers(filename);
+  the_highest_number = std::get<0>(data);
+  numbers = std::get<1>(data);
 
   // The time monitor
   double elapsed = 0;
@@ -90,18 +95,18 @@ int main(int argc, char *argv[]) {
   Graph g(int the_highest_number); // Inicializando o grapho
 
   // Colocando os dados nele
-  int buffer{-1};
-  int inserir;
-  for (int i = 0; i < numbers.size(); i++){
-    if (buffer == -1){
-      buffer = numbers[i];
-    }else{
-      inserir = numbers[i];
-      g.addEdge(buffer, inserir);
-      g.addEdge(inserir, buffer);
-    }
- }
- std::cout << '\n';
+  // int buffer{-1};
+  // int inserir;
+  // for (int i = 0; i < numbers.size(); i++){
+  //   if (buffer == -1){
+  //     buffer = numbers[i];
+  //   }else{
+  //     inserir = numbers[i];
+  //     g.addEdge(buffer, inserir);
+  //     g.addEdge(inserir, buffer);
+  //   }
+  // }
+  std::cout << '\n';
 
   // g.addEdge(0, 1);
   // g.addEdge(0, 2);
@@ -113,6 +118,24 @@ int main(int argc, char *argv[]) {
 
   auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
   elapsed += dt.count();
+
+  // Creating a file with the .trg instead of the .edgelist
+  std::string toReplace(".edgelist");
+  size_t pos = filename.find(toReplace);
+  filename.replace(pos, toReplace.length(), ".trg");
+
+  std::ofstream output_file;
+  output_file.open(filename);
+
+  // Passando por todos os pontos dos vetor e escrevendo no output text
+
+  // TODO: Lembrar de mudar isso para o vetor do find_triangles
+  for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end();
+       ++it) {
+    output_file << *it << " ";
+  }
+
+  output_file.close();
 
   // Show timing results
   std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
