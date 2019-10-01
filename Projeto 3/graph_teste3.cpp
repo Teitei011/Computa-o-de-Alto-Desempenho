@@ -13,27 +13,32 @@
 namespace chrono = std::chrono;
 
 class Graph {
-  int _size;
   std::vector<int> adjLists;
 
 public:
   Graph(int V);
   void addEdge(int origem, int destino);
   std::vector<int> find_triangles();
+  void show_graph();
 };
 
-Graph::Graph(int V) {
-  _size = V;
-  adjLists.reserve(
-      V); // Alocate just the rigth amount of space for all the vertices
+void Graph::show_graph(){
+  
 }
 
-// void Graph::addEdge(int origem, int destino) {
-//   adjLists[origem].push_back(destino);
-//   adjLists[destino].push_back(origem);
-// }
 
-std::vector<int> Graph::find_triangles() {}
+Graph::Graph(int V) {
+  adjLists.reserve(V); // Alocate just the rigth amount of space for all the vertices
+}
+
+void Graph::addEdge(int origem, int destino) {
+  adjLists[origem].push_back(destino);
+  adjLists[destino].push_back(origem);
+}
+
+std::vector<int> Graph::find_triangles() {
+
+}
 
 std::string read_argument(int argc, char *argv[]) {
   std::string filename;
@@ -60,7 +65,8 @@ std::pair<int, std::vector<int>> read_numbers(std::string filename) {
   if (infile.is_open()) {
     int num;
     while (infile >> num) {
-      if (the_highest_number > num)
+
+      if (the_highest_number < num)
         the_highest_number = num;
 
       numbers.push_back(num);
@@ -86,6 +92,7 @@ int main(int argc, char *argv[]) {
   the_highest_number = std::get<0>(data);
   numbers = std::get<1>(data);
 
+
   // The time monitor
   double elapsed = 0;
   chrono::high_resolution_clock::time_point t1, t2;
@@ -95,24 +102,21 @@ int main(int argc, char *argv[]) {
   Graph g(int the_highest_number); // Inicializando o grapho
 
   // Colocando os dados nele
-  // int buffer{-1};
-  // int inserir;
-  // for (int i = 0; i < numbers.size(); i++){
-  //   if (buffer == -1){
-  //     buffer = numbers[i];
-  //   }else{
-  //     inserir = numbers[i];
-  //     g.addEdge(buffer, inserir);
-  //     g.addEdge(inserir, buffer);
-  //   }
-  // }
-  std::cout << '\n';
+  int buffer{-1};
+  int contador;
+  int inserir;
 
-  // g.addEdge(0, 1);
-  // g.addEdge(0, 2);
-  // g.addEdge(1, 2);
-  // g.addEdge(2, 3);
-  // //
+  for (int i = 0; i < numbers.size(); i++){
+      inserir = numbers[i];
+      if (constador == 1){
+        g.addEdge(buffer, inserir);
+        g.addEdge(inserir, buffer);
+        contador = 0;
+      }else{
+        contador += 1;
+      }
+      buffer = inserir;
+    }
 
   t2 = chrono::high_resolution_clock::now();
 
