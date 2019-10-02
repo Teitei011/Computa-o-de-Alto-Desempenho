@@ -8,8 +8,6 @@
 #include <string>
 #include <vector>
 
-#include <typeinfo>
-
 namespace chrono = std::chrono;
 
 class Graph {
@@ -24,21 +22,20 @@ public:
 
 void Graph::show_graph() {
 
-  for (unsigned i = 0; i < _adjLists.size(); i++){
-    std::cout << i << " --> ";
-    for (unsigned j = 0; j < _adjLists[i].size(); j++){
-      std::cout << _adjLists[i][j] << ' ';
+  for (unsigned i = 0; i < _adjLists.size(); i++) {
+    // std::cout << i << " --> ";
+    for (unsigned j = 0; j < _adjLists[i].size(); j++) {
+      // std::cout << _adjLists[i][j] << ' ';
     }
     std::cout << '\n';
   }
 
   return;
-
 }
 
 Graph::Graph(int V) {
   _adjLists.resize(V + 1);
-  std::cout << "Tamanho do vetor igual a: " << _adjLists.size() << '\n';
+  // std::cout << "Tamanho do vetor igual a: " << _adjLists.size() << '\n';
 }
 
 void Graph::addEdge(int origem, int destino) {
@@ -46,34 +43,35 @@ void Graph::addEdge(int origem, int destino) {
   _adjLists[destino].push_back(origem);
 }
 
-std::vector<int> Graph::find_triangles() {
+std::vector<int> Graph::find_triangles() { // TODO: The problem lays here
   std::vector<int> answer;
   int buffer, triangles;
   int contador{0};
 
-
-  for(unsigned i = 0; i < _adjLists.size() - 1; i++){
+  for (unsigned i = 0; i < _adjLists.size() - 1; i++) {
     triangles = 0;
-      if (_adjLists[i].size() < 2)   // Não há n de vertices o suficiente para fazer um triangulo
-      {
-        answer[i] = 0;
-      }else{
-        for (unsigned j = 0; j < _adjLists[i].size(); j++){
-          if (contador == 0){
-            buffer = _adjLists[i][j];
-            contador +=1;
-          } else{
-            for (unsigned k = 0; k < _adjLists[buffer].size(); k++){
-              if (_adjLists[buffer][k] == _adjLists[i][j]){
-                  triangles+= 1;
-                  break;
-              }
-            }
-            contador = 0;
-          }
-        }
-        answer[i] = triangles;
+    if (_adjLists[i].size() < 2){ // Não há n de vertices o suficiente para fazer um triangulo
+      answer.push_back(0);
+      // std::cout << "Muito pequeno, próximo!" << '\n';
       }
+    else {
+      // std::cout << "Tem um tamanho o suficiente" << '\n';
+      for (unsigned j = 0; j < _adjLists[i].size(); j++) {
+        if (contador == 0) {
+          buffer = _adjLists[i][j];
+          contador += 1;
+        } else {
+          for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
+            if (_adjLists[buffer][k] == buffer) {
+              triangles += 1;
+              break;
+            }
+          }
+          contador = 0;
+        }
+      }
+      answer.push_back(triangles);
+    }
   }
 
   return answer;
@@ -129,7 +127,6 @@ int main(int argc, char *argv[]) {
   double elapsed = 0;
   chrono::high_resolution_clock::time_point t1, t2;
 
-
   std::vector<int> numbers;
   int the_highest_number;
   std::pair<int, std::vector<int>> data;
@@ -137,7 +134,6 @@ int main(int argc, char *argv[]) {
   std::vector<int> answer;
 
   std::cout << "The filename is: " << filename << '\n';
-
 
   data = read_numbers(filename);
   the_highest_number = std::get<0>(data);
@@ -147,13 +143,12 @@ int main(int argc, char *argv[]) {
 
   t1 = chrono::high_resolution_clock::now();
 
-  std::cout << "The highest number is: " << the_highest_number << '\n';
+  // std::cout << "The highest number is: " << the_highest_number << '\n';
 
   Graph g(the_highest_number); // Inicializando o grapho
   // Colocando os dados nele
 
-
-  for (unsigned  i = 0; i < numbers.size(); i++) {
+  for (unsigned i = 0; i < numbers.size(); i++) {
     inserir = numbers[i];
     if (contador == 1) {
       g.addEdge(buffer, inserir);
@@ -165,9 +160,13 @@ int main(int argc, char *argv[]) {
     }
     buffer = inserir;
   }
-  std::cout << "Numero de iterações: " << contador1 << '\n';
 
   answer = g.find_triangles();
+
+  std::cout << "Resposta do exercicio: " << '\n';
+  for (size_t i = 0; i < answer.size(); i++) {
+    std::cout << answer[i] << " ";
+  }
 
   t2 = chrono::high_resolution_clock::now();
 
@@ -196,7 +195,6 @@ int main(int argc, char *argv[]) {
 
   // Show timing results
   std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
-
 
   return 0;
 }
