@@ -14,7 +14,7 @@ namespace chrono = std::chrono;
 
 class Graph {
   int _size;
-  std::vector<std::vector<int>> _adjLists(int N);
+  std::vector<std::vector<int>> _adjLists;
 
 public:
   Graph(int V);
@@ -27,12 +27,13 @@ void Graph::show_graph() { return; }
 
 Graph::Graph(int V) {
   _size = V;
-  _adjLists(V); // Alocate just the rigth amount of space for all the vertices
+  _adjLists.resize(V + 1);
+  // _adjLists = std::vector<std::vector<int>>; // Alocate just the rigth amount of space for all the vertices
 }
 
 void Graph::addEdge(int origem, int destino) {
   _adjLists[origem].push_back(destino);
-  _adjLists[destino].push_back(origem);
+  _adjLists[destino].push_back(origem); // TODO: Linha com o problema
 }
 
 // std::vector<int> Graph::find_triangles() {
@@ -64,7 +65,6 @@ std::pair<int, std::vector<int>> read_numbers(std::string filename) {
   if (infile.is_open()) {
     int num;
     while (infile >> num) {
-
       if (the_highest_number < num)
         the_highest_number = num;
 
@@ -104,6 +104,7 @@ int main(int argc, char *argv[]) {
   int inserir;
 
   for (unsigned  i = 0; i < numbers.size(); i++) {
+
     inserir = numbers[i];
     if (contador == 1) {
       g.addEdge(buffer, inserir);
@@ -114,7 +115,7 @@ int main(int argc, char *argv[]) {
     buffer = inserir;
   }
 
-  g.find_triangles();
+  // g.find_triangles();
 
   t2 = chrono::high_resolution_clock::now();
 
