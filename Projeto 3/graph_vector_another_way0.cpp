@@ -21,11 +21,11 @@ public:
 };
 
 void Graph::show_graph() {
-
-  for (unsigned i = 0; i < _adjLists.size(); i++) {
-    // std::cout << i << " --> ";
+  std::cout << "\nThe Graph is: " << '\n';
+  for (unsigned i = 0; i < _adjLists.size() - 1; i++) {
+    std::cout << i << " --> ";
     for (unsigned j = 0; j < _adjLists[i].size(); j++) {
-      // std::cout << _adjLists[i][j] << ' ';
+      std::cout << _adjLists[i][j] << ' ';
     }
     std::cout << '\n';
   }
@@ -33,10 +33,7 @@ void Graph::show_graph() {
   return;
 }
 
-Graph::Graph(int V) {
-  _adjLists.resize(V + 1);
-  // std::cout << "Tamanho do vetor igual a: " << _adjLists.size() << '\n';
-}
+Graph::Graph(int V) {_adjLists.resize(V + 1);}
 
 void Graph::addEdge(int origem, int destino) {
   _adjLists[origem].push_back(destino);
@@ -48,30 +45,27 @@ std::vector<int> Graph::find_triangles() { // TODO: The problem lays here
   int buffer, triangles;
   int contador{0};
 
-  for (unsigned i = 0; i < _adjLists.size() - 1; i++) {
+  for (unsigned  i = 0; i < _adjLists.size() - 1; i++) {
     triangles = 0;
-    if (_adjLists[i].size() < 2){ // Não há n de vertices o suficiente para fazer um triangulo
-      answer.push_back(0);
-      // std::cout << "Muito pequeno, próximo!" << '\n';
-      }
-    else {
-      // std::cout << "Tem um tamanho o suficiente" << '\n';
-      for (unsigned j = 0; j < _adjLists[i].size(); j++) {
+    if(_adjLists[i].size() > 1){
+      for(unsigned  j = 0; j < _adjLists[i].size(); j ++){
         if (contador == 0) {
           buffer = _adjLists[i][j];
-          contador += 1;
-        } else {
-          for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
-            if (_adjLists[buffer][k] == buffer) {
-              triangles += 1;
+          contador++;
+        }else{
+          contador = 0;
+          for (unsigned k = 0; k < _adjLists[buffer].size(); k++){
+            if (_adjLists[i][j] == _adjLists[buffer][k]){ // Tem um triangulo
+              triangles++;
               break;
             }
           }
-          contador = 0;
+          buffer = _adjLists[i][j];
         }
+        // std::cout << buffer << '\n';
       }
-      answer.push_back(triangles);
     }
+    answer.push_back(triangles);
   }
 
   return answer;
@@ -140,12 +134,10 @@ int main(int argc, char *argv[]) {
   numbers = std::get<1>(data);
 
   // The time monitor
-
   t1 = chrono::high_resolution_clock::now();
 
-  // std::cout << "The highest number is: " << the_highest_number << '\n';
-
   Graph g(the_highest_number); // Inicializando o grapho
+
   // Colocando os dados nele
 
   for (unsigned i = 0; i < numbers.size(); i++) {
@@ -176,25 +168,23 @@ int main(int argc, char *argv[]) {
   // Creating a file with the .trg instead of the .edgelist
   std::string toReplace(".edgelist");
   size_t pos = filename.find(toReplace);
-  filename.replace(pos, toReplace.length(), ".trg");
+  filename.replace(pos, toReplace.length(), ".TO_REMOVE"); //TODO: Excluir o caracter a mais
 
   std::ofstream output_file;
   output_file.open(filename);
 
   // Passando por todos os pontos dos vetor e escrevendo no output text
 
-  // TODO: Lembrar de mudar isso para o vetor do find_triangles
-  for (std::vector<int>::iterator it = answer.begin(); it != answer.end();
-       ++it) {
-    output_file << *it << " ";
-  }
+  // Colocando no output_file
+  for (std::vector<int>::iterator it = answer.begin(); it != answer.end(); ++it){ output_file << *it << " ";}
+
 
   output_file.close();
 
   g.show_graph();
 
   // Show timing results
-  std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
+  std::cout << "\nTime Taken: " << elapsed / 1.0 / 1e6 << std::endl;
 
   return 0;
 }
