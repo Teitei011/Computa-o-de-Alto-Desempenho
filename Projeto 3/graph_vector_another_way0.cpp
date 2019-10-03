@@ -22,7 +22,7 @@ public:
 
 void Graph::show_graph() {
   std::cout << "\nThe Graph is: " << '\n';
-  for (unsigned i = 0; i < _adjLists.size() - 1; i++) {
+  for (unsigned i = 0; i < _adjLists.size(); i++) {
     std::cout << i << " --> ";
     for (unsigned j = 0; j < _adjLists[i].size(); j++) {
       std::cout << _adjLists[i][j] << ' ';
@@ -45,7 +45,7 @@ std::vector<int> Graph::find_triangles() { // TODO: The problem lays here
   int buffer, triangles;
   int contador{0};
 
-  for (unsigned  i = 0; i < _adjLists.size() - 1; i++) {
+  for (unsigned  i = 0; i < _adjLists.size(); i++) {
     triangles = 0;
     if(_adjLists[i].size() > 1){
       for(unsigned  j = 0; j < _adjLists[i].size(); j ++){
