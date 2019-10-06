@@ -13,6 +13,7 @@ namespace chrono = std::chrono;
 class Graph {
   std::vector<std::vector<int>> _adjLists;
 
+
 public:
   Graph(int V);
   void addEdge(int origem, int destino);
@@ -29,11 +30,9 @@ void Graph::show_graph() {
     }
     std::cout << '\n';
   }
-
-  return;
 }
 
-Graph::Graph(int V) {_adjLists.resize(V + 1);}
+Graph::Graph(int V) { _adjLists.resize(V + 1); }
 
 void Graph::addEdge(int origem, int destino) {
   _adjLists[origem].push_back(destino);
@@ -42,27 +41,29 @@ void Graph::addEdge(int origem, int destino) {
 
 std::vector<int> Graph::find_triangles() { // TODO: The problem lays here
   std::vector<int> answer;
-  int buffer, triangles;
+  int buffer, buffer2,triangles;
   int contador{0};
 
-  for (unsigned  i = 0; i < _adjLists.size(); i++) {
+  for (unsigned i = 0; i < _adjLists.size(); i++) {
     triangles = 0;
-    if(_adjLists[i].size() > 1){
-      for(unsigned  j = 0; j < _adjLists[i].size(); j ++){
-        if (contador == 0) {
+    // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    if (_adjLists[i].size() > 1){
+      // std::cout << "Posicao Vetor: "<< i << '\n';
+      for (unsigned j = 0; j < _adjLists[i].size(); j++){
+        if (contador == 0){
           buffer = _adjLists[i][j];
           contador++;
         }else{
           contador = 0;
-          for (unsigned k = 0; k < _adjLists[buffer].size(); k++){
-            if (_adjLists[i][j] == _adjLists[buffer][k]){ // Tem um triangulo
+          buffer2 = _adjLists[i][j];
+          for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
+            if (buffer2 == _adjLists[buffer][k]) { // Tem um triangulo
               triangles++;
               break;
             }
           }
           buffer = _adjLists[i][j];
         }
-        // std::cout << buffer << '\n';
       }
     }
     answer.push_back(triangles);
@@ -74,7 +75,7 @@ std::vector<int> Graph::find_triangles() { // TODO: The problem lays here
 std::string read_argument(int argc, char *argv[]) {
   std::string filename;
 
-  // We need exactly three arguments (considering program name).
+  // We need exactly two arguments (considering program name).
   if (argc != 2) {
     std::cout << "Usage: " << argv[0] << " <filename>\n";
     exit(1);
@@ -145,7 +146,6 @@ int main(int argc, char *argv[]) {
     if (contador == 1) {
       g.addEdge(buffer, inserir);
       contador = 0;
-      // std::cout << buffer << " " << inserir << '\n';
     } else {
       contador += 1;
       contador1 += 1;
@@ -168,7 +168,8 @@ int main(int argc, char *argv[]) {
   // Creating a file with the .trg instead of the .edgelist
   std::string toReplace(".edgelist");
   size_t pos = filename.find(toReplace);
-  filename.replace(pos, toReplace.length(), ".TO_REMOVE"); //TODO: Excluir o caracter a mais
+  filename.replace(pos, toReplace.length(),
+                   ".TO_REMOVE"); // TODO: Excluir o caracter a mais
 
   std::ofstream output_file;
   output_file.open(filename);
@@ -176,15 +177,18 @@ int main(int argc, char *argv[]) {
   // Passando por todos os pontos dos vetor e escrevendo no output text
 
   // Colocando no output_file
-  for (std::vector<int>::iterator it = answer.begin(); it != answer.end(); ++it){ output_file << *it << " ";}
-
+  for (std::vector<int>::iterator it = answer.begin(); it != answer.end();
+       ++it) {
+    output_file << *it << " ";
+  }
 
   output_file.close();
 
   g.show_graph();
 
   // Show timing results
-  std::cout << "\nTime Taken: " << elapsed / 1.0 / 1e6 << std::endl;
+  std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
+  // std::cout <<  elapsed / 1.0 / 1e6 << std::endl;
 
   return 0;
 }
