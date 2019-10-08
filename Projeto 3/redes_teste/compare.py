@@ -20,4 +20,4 @@ for filename in os.listdir():
         else:
             print("### WARNING: Files Are Different! ###\n\n")
 
-os.system("rm *.TO_REMOVE")
+# os.system("rm *.TO_REMOVE")

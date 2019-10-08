@@ -13,24 +13,11 @@ namespace chrono = std::chrono;
 class Graph {
   std::vector<std::vector<int>> _adjLists;
 
-
 public:
   Graph(int V);
   void addEdge(int origem, int destino);
   std::vector<int> find_triangles();
-  void show_graph();
 };
-
-void Graph::show_graph() {
-  std::cout << "\nThe Graph is: " << '\n';
-  for (unsigned i = 0; i < _adjLists.size(); i++) {
-    std::cout << i << " --> ";
-    for (unsigned j = 0; j < _adjLists[i].size(); j++) {
-      std::cout << _adjLists[i][j] << ' ';
-    }
-    std::cout << '\n';
-  }
-}
 
 Graph::Graph(int V) { _adjLists.resize(V + 1); }
 
@@ -39,30 +26,24 @@ void Graph::addEdge(int origem, int destino) {
   _adjLists[destino].push_back(origem);
 }
 
-std::vector<int> Graph::find_triangles() { // TODO: The problem lays here
+std::vector<int> Graph::find_triangles() {
   std::vector<int> answer;
-  int buffer, buffer2,triangles;
-  int contador{0};
+  int buffer, buffer2, triangles;
 
-  for (unsigned i = 0; i < _adjLists.size(); i++) {
+  for (unsigned i = 0; i < _adjLists.size(); i++) { // edge
     triangles = 0;
-    // std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    if (_adjLists[i].size() > 1){
-      // std::cout << "Posicao Vetor: "<< i << '\n';
-      for (unsigned j = 0; j < _adjLists[i].size(); j++){
-        if (contador == 0){
-          buffer = _adjLists[i][j];
-          contador++;
-        }else{
-          contador = 0;
-          buffer2 = _adjLists[i][j];
+
+    if (_adjLists[i].size() > 1) { // Dessa forma não percorre vetores que não podem possuem triangles
+      for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
+        buffer = _adjLists[i][j];
+        for (unsigned h = j + 1; h < _adjLists[i].size(); h++) { // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
+          buffer2 = _adjLists[i][h];
           for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
-            if (buffer2 == _adjLists[buffer][k]) { // Tem um triangulo
+            if (buffer2 == _adjLists[buffer][k]) {
               triangles++;
               break;
             }
           }
-          buffer = _adjLists[i][j];
         }
       }
     }
@@ -97,7 +78,8 @@ std::pair<int, std::vector<int>> read_numbers(std::string filename) {
   if (infile.is_open()) {
     int num;
     while (infile >> num) {
-      if (the_highest_number < num)
+
+      if (the_highest_number < num) // Verificando o maior numero só com a intencao de nao fazer alocacao desnecessaria na criacao do grapho
         the_highest_number = num;
 
       numbers.push_back(num);
@@ -128,9 +110,9 @@ int main(int argc, char *argv[]) {
 
   std::vector<int> answer;
 
-  std::cout << "The filename is: " << filename << '\n';
+  data = read_numbers(filename); // Obtendo tanto os valores referentes a tarefa quanto o maior numero do grapho para a alocacao
 
-  data = read_numbers(filename);
+  // Separando os dados que forma obtidos pelo read_numbers
   the_highest_number = std::get<0>(data);
   numbers = std::get<1>(data);
 
@@ -140,7 +122,6 @@ int main(int argc, char *argv[]) {
   Graph g(the_highest_number); // Inicializando o grapho
 
   // Colocando os dados nele
-
   for (unsigned i = 0; i < numbers.size(); i++) {
     inserir = numbers[i];
     if (contador == 1) {
@@ -155,26 +136,17 @@ int main(int argc, char *argv[]) {
 
   answer = g.find_triangles();
 
-  std::cout << "Resposta do exercicio: " << '\n';
-  for (size_t i = 0; i < answer.size(); i++) {
-    std::cout << answer[i] << " ";
-  }
-
   t2 = chrono::high_resolution_clock::now();
 
   auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
   elapsed += dt.count();
 
-  // Creating a file with the .trg instead of the .edgelist
+  // Criadno um arquivo com .trg
   std::string toReplace(".edgelist");
   size_t pos = filename.find(toReplace);
-  filename.replace(pos, toReplace.length(),
-                   ".TO_REMOVE"); // TODO: Excluir o caracter a mais
-
+  filename.replace(pos, toReplace.length(), ".trg");
   std::ofstream output_file;
   output_file.open(filename);
-
-  // Passando por todos os pontos dos vetor e escrevendo no output text
 
   // Colocando no output_file
   for (std::vector<int>::iterator it = answer.begin(); it != answer.end();
@@ -184,11 +156,8 @@ int main(int argc, char *argv[]) {
 
   output_file.close();
 
-  g.show_graph();
-
   // Show timing results
   std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
-  // std::cout <<  elapsed / 1.0 / 1e6 << std::endl;
 
   return 0;
 }
