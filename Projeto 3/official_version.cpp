@@ -141,6 +141,10 @@ int main(int argc, char *argv[]) {
   auto dt = chrono::duration_cast<chrono::microseconds>(t2 - t1);
   elapsed += dt.count();
 
+
+    // Show timing results
+  std::cout << filename << " Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
+
   // Criadno um arquivo com .trg
   std::string toReplace(".edgelist");
   size_t pos = filename.find(toReplace);
@@ -155,9 +159,6 @@ int main(int argc, char *argv[]) {
   }
 
   output_file.close();
-
-  // Show timing results
-  std::cout << "Time Taken: " << elapsed / 1.0 / 1e6 << std::endl;
 
   return 0;
 }
