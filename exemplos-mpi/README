@@ -1,0 +1,28 @@
+Ordem para estudar os programas:
+
+01. hello.cpp
+02. uma_mensagem.cpp (*)
+03. varias_mensagens.cpp
+04. linear.cpp
+05. linear_nao_bloq.cpp
+06. broadcast.cpp
+07. gather.cpp
+08. scatter_reduce.cpp (**)
+09. compat_tipos.cpp (***)
+10. struct.cpp
+11. novo_com.cpp
+12. novo_com_split.cpp
+13. linear_topo.cpp
+14. grid.cpp
+15. matrix_vector_product.cpp (**)
+16. mandel_static_1d.cpp (**)
+17. mandel_static_2d.cpp (**)
+18. mandel_dynamic.cpp (**)
+19. heat.cpp [sequencial, apenas para comparação] (**)
+20. heat-mpi.cpp (**)
+
+* Precisa ser rodado com exatamento 2 processos (experimente rodar
+  diferentemente).
+** Os programas marcados precisam de argumentos de linha de comando.
+   Veja o código para saber número e significado dos argumentos.
+*** Precisa ser rodado com exatamento 1 processo.

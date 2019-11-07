@@ -1,0 +1,1182 @@
+desc: (none)
+cmd: ./exe net_large_000.edgelist
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=2238784
+mem_heap_B=32816
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=3476840
+mem_heap_B=97894
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=4564264
+mem_heap_B=114278
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=6838238
+mem_heap_B=179814
+mem_heap_extra_B=90
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=6871085
+mem_heap_B=147046
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=11585869
+mem_heap_B=278118
+mem_heap_extra_B=90
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=11651484
+mem_heap_B=212582
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=21308930
+mem_heap_B=474726
+mem_heap_extra_B=90
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=21440081
+mem_heap_B=343654
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=41746824
+mem_heap_B=867942
+mem_heap_extra_B=90
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=42009047
+mem_heap_B=605798
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=84064598
+mem_heap_B=1654374
+mem_heap_extra_B=90
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=84588965
+mem_heap_B=1130086
+mem_heap_extra_B=82
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=120380784
+mem_heap_B=1871262
+mem_heap_extra_B=98
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=121124299
+mem_heap_B=1871262
+mem_heap_extra_B=98
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1871262 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1048576 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 1048576 0x10A76B: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 1048576 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n1: 741176 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 8806 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=121872311
+mem_heap_B=3778647
+mem_heap_extra_B=73
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=123041033
+mem_heap_B=3817139
+mem_heap_extra_B=80661
+mem_stacks_B=0
+heap_tree=detailed
+n4: 3817139 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 38531 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=123686695
+mem_heap_B=3855463
+mem_heap_extra_B=160993
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3855463 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 76816 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 45624 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 45624 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 31192 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=124280040
+mem_heap_B=3888539
+mem_heap_extra_B=230325
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=125191876
+mem_heap_B=3935799
+mem_heap_extra_B=328817
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3935799 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 157152 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 94672 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 94672 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 62480 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 62480 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=126337237
+mem_heap_B=3993499
+mem_heap_extra_B=444517
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3993499 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 214852 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 131440 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 131440 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 83412 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 83412 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=22
+#-----------
+time=126955421
+mem_heap_B=4023399
+mem_heap_extra_B=504017
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4023399 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 244752 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 150728 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 150728 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 94024 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 94024 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=127611321
+mem_heap_B=4053739
+mem_heap_extra_B=564981
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4053739 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 275092 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 170312 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 170312 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 104780 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 104780 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=128300075
+mem_heap_B=4085123
+mem_heap_extra_B=626501
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4085123 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 306476 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 190968 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 190968 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 115508 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 115508 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=129019064
+mem_heap_B=4117447
+mem_heap_extra_B=689041
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4117447 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 338800 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 212512 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 212512 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 126288 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 126288 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=129773398
+mem_heap_B=4150291
+mem_heap_extra_B=752845
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4150291 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 371644 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 234472 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 234472 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 137172 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 137172 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=130583112
+mem_heap_B=4184259
+mem_heap_extra_B=817525
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4184259 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 405612 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 257648 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 257648 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 147964 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 147964 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=131433230
+mem_heap_B=4219031
+mem_heap_extra_B=883329
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4219031 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 440384 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 281816 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 281816 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 158568 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 158568 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=132334631
+mem_heap_B=4255031
+mem_heap_extra_B=949945
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4255031 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 476384 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 307320 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 307320 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 169064 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 169064 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=30
+#-----------
+time=133281497
+mem_heap_B=4292067
+mem_heap_extra_B=1017581
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4292067 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 513420 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 333968 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 333968 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 179452 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 179452 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=134267402
+mem_heap_B=4329939
+mem_heap_extra_B=1086533
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4329939 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 551292 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 361472 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 361472 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 189820 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 189820 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=135312327
+mem_heap_B=4369003
+mem_heap_extra_B=1156365
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4369003 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 590356 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 390552 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 390552 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 199804 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 199804 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=33
+#-----------
+time=136412216
+mem_heap_B=4408919
+mem_heap_extra_B=1227545
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4408919 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 630272 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 420912 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 420912 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 209360 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 209360 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=137565997
+mem_heap_B=4449991
+mem_heap_extra_B=1299833
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4449991 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 671344 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 452736 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 452736 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 218608 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 218608 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=138785309
+mem_heap_B=4491987
+mem_heap_extra_B=1373437
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4491987 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 713340 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 486176 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 486176 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 227164 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 227164 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=139396294
+mem_heap_B=4512715
+mem_heap_extra_B=1409413
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=140070501
+mem_heap_B=4535119
+mem_heap_extra_B=1448225
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4535119 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 756472 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 521640 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 521640 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 234832 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 234832 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=140740677
+mem_heap_B=4556711
+mem_heap_extra_B=1486489
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4556711 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 778064 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 540056 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 540056 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 238008 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 238008 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=141424347
+mem_heap_B=4578591
+mem_heap_extra_B=1525081
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4578591 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 799944 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 558880 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 558880 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 241064 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 241064 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=142122625
+mem_heap_B=4600575
+mem_heap_extra_B=1564145
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4600575 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 821928 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 578168 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 578168 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 243760 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 243760 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=142843421
+mem_heap_B=4622479
+mem_heap_extra_B=1603905
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4622479 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 843832 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 598088 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 598088 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 245744 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 245744 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 39 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=143471624
+mem_heap_B=4641007
+mem_heap_extra_B=1638537
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=144284149
+mem_heap_B=5757395
+mem_heap_extra_B=1641069
+mem_stacks_B=0
+heap_tree=peak
+n5: 5757395 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n4: 1604804 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741184 0x10A4A2: Graph::find_triangles() [clone ._omp_fn.0] (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n1: 741184 0x51D295C: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n1: 741184 0x5F9D6D9: start_thread (pthread_create.c:463)
+     n0: 741184 0x572488D: clone (clone.S:95)
+  n1: 616824 0x10A8A0: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 616824 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 246796 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 246796 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n1: 370592 0x10A1D6: Graph::find_triangles() (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 370592 0x109BFB: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n0: 76095 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=3740447218
+mem_heap_B=5390899
+mem_heap_extra_B=1641069
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=3740481148
+mem_heap_B=5391451
+mem_heap_extra_B=1641085
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=3838290979
+mem_heap_B=5391451
+mem_heap_extra_B=1641085
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=3838983551
+mem_heap_B=4943923
+mem_heap_extra_B=1366525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=3840035647
+mem_heap_B=4719959
+mem_heap_extra_B=822409
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=3840627451
+mem_heap_B=4630723
+mem_heap_extra_B=485101
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=3840660329
+mem_heap_B=4626107
+mem_heap_extra_B=465917
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=3840693207
+mem_heap_B=4621679
+mem_heap_extra_B=446673
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=3840726085
+mem_heap_B=4617271
+mem_heap_extra_B=427185
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=3840758963
+mem_heap_B=4612867
+mem_heap_extra_B=407933
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=3840791841
+mem_heap_B=4608423
+mem_heap_extra_B=388737
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4608423 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 822328 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741184 0x10A4A2: Graph::find_triangles() [clone ._omp_fn.0] (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n1: 741184 0x51D295C: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n1: 741184 0x5F9D6D9: start_thread (pthread_create.c:463)
+     n0: 741184 0x572488D: clone (clone.S:95)
+  n1: 72672 0x10A8B8: Graph::addEdge(int, int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 72672 0x109BE0: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 8472 in 2 places, all below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 7487 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=55
+#-----------
+time=3840824719
+mem_heap_B=4604083
+mem_heap_extra_B=369357
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=3840857597
+mem_heap_B=4599787
+mem_heap_extra_B=349885
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=3840890475
+mem_heap_B=4595551
+mem_heap_extra_B=330433
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=3840923353
+mem_heap_B=4591335
+mem_heap_extra_B=311041
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=3840956231
+mem_heap_B=4587115
+mem_heap_extra_B=291557
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=3840989109
+mem_heap_B=4582851
+mem_heap_extra_B=272133
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=3841021987
+mem_heap_B=4578659
+mem_heap_extra_B=252621
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=3841054865
+mem_heap_B=4574511
+mem_heap_extra_B=232985
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=3841087743
+mem_heap_B=4570407
+mem_heap_extra_B=213449
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=3841120621
+mem_heap_B=4566267
+mem_heap_extra_B=193661
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4566267 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2223552 0x10AC3C: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_default_append(unsigned long) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 2223552 0x10A284: Graph::Graph(int) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 2223552 0x109B89: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 1482352 0x10AAA1: std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 741176 0x109B71: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741176 0x10A696: read_numbers(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n0: 741176 0x109ACA: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n2: 780172 0x10ADF2: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 741184 0x10A4A2: Graph::find_triangles() [clone ._omp_fn.0] (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+   n1: 741184 0x51D295C: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n1: 741184 0x5F9D6D9: start_thread (pthread_create.c:463)
+     n0: 741184 0x572488D: clone (clone.S:95)
+  n0: 38988 in 3 places, all below massif's threshold (1.00%)
+ n1: 72704 0x4EC2414: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+  n1: 72704 0x4010731: _dl_init (dl-init.c:72)
+   n1: 72704 0x40010C8: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+    n1: 72704 0x0: ???
+     n1: 72704 0x1FFF0004FD: ???
+      n0: 72704 0x1FFF000503: ???
+ n0: 7487 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=3841153499
+mem_heap_B=4562191
+mem_heap_extra_B=174049
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=3841186377
+mem_heap_B=4558131
+mem_heap_extra_B=154325
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=3841219255
+mem_heap_B=4554083
+mem_heap_extra_B=134557
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=3841252133
+mem_heap_B=4550111
+mem_heap_extra_B=114809
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=3841285011
+mem_heap_B=4546135
+mem_heap_extra_B=95225
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=3841317889
+mem_heap_B=4542139
+mem_heap_extra_B=75517
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=3841350767
+mem_heap_B=4538199
+mem_heap_extra_B=55817
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=3841383645
+mem_heap_B=4534291
+mem_heap_extra_B=35989
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=3841416523
+mem_heap_B=4530415
+mem_heap_extra_B=16161
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=3841456022
+mem_heap_B=7456
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=detailed
+n4: 7456 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4096 0x568118A: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x5691377: _IO_doallocbuf (genops.c:365)
+   n1: 4096 0x5690496: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:759)
+    n1: 4096 0x568E9EB: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1266)
+     n1: 4096 0x5682975: fwrite (iofwrite.c:39)
+      n1: 4096 0x4F46CB2: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+       n0: 4096 0x109C5F: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n3: 2408 0x51C5A97: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+  n1: 2208 0x51D29C6: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+   n1: 2208 0x51C9EB4: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n1: 2208 0x10A21E: Graph::find_triangles() (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+     n0: 2208 0x109BFB: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n1: 192 0x51D2B44: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+   n1: 192 0x51C9EB4: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n1: 192 0x10A21E: Graph::find_triangles() (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+     n0: 192 0x109BFB: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+  n0: 8 in 1 place, below massif's threshold (1.00%)
+ n1: 912 0x40134A5: _dl_allocate_tls (dl-tls.c:286)
+  n1: 912 0x5F9E226: pthread_create@@GLIBC_2.2.5 (allocatestack.c:627)
+   n1: 912 0x51D2F30: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n1: 912 0x51C9EC8: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+     n1: 912 0x10A21E: Graph::find_triangles() (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+      n0: 912 0x109BFB: main (in /mnt/c/Users/stefa/Desktop/Cursos/Computação de Alto Desempenho/Projeto 5/redes_desempenho/exe)
+ n0: 40 in 11 places, all below massif's threshold (1.00%)
