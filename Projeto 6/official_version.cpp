@@ -48,8 +48,8 @@ std::vector<int> Graph::find_triangles() {
   std::fill_n(begin(conts), r, q + 1);
 
   std::fill(begin(conts) + r, end(conts), q);
-  
-  for (int i = 0; i < conts.size(); i++){
+
+  for (int i = 1; i < conts.size() + 1; i++){
     conts[i] = conts[i] * i;
   }
   desls[0] = 0;
