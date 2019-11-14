@@ -27,9 +27,13 @@ void Graph::addEdge(int origem, int destino) {
 
 std::vector<int> Graph::find_triangles() {
   int N = _adjLists.size() + 1;
+  int rank;
 
 
   std::vector<int> answer(N);
+
+  MPI_Init(&argc, &argv);
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
   MPI_Datatype tLinha, tColuna;
 
@@ -38,7 +42,7 @@ std::vector<int> Graph::find_triangles() {
   MPI_Type_commit(&tColuna);
 
   // Cria um tipo para as linhas
-  MPI_Type_vector(N, 1, N, MPI_DOUBLE, &tLinha);
+  MPI_Type_vector(N, 1, N, MPI_INT, &tLinha);
   MPI_Type_commit(&tLinha);
 
 
@@ -107,7 +111,7 @@ int main(int argc, char *argv[]) {
   int buffer{-1};
   int contador{0};
   int contador1{0};
-  int inserir, rank;
+  int inserir;
 
   double elapsed = 0;
   chrono::high_resolution_clock::time_point t1, t2;
@@ -118,9 +122,8 @@ int main(int argc, char *argv[]) {
 
   std::vector<int> answer;
 
-  MPI_Init(&argc, &argv);
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  
+
+
 
   data = read_numbers(filename); // Obtendo tanto os valores referentes a tarefa
                               // quanto o maior numero do grapho para a alocacao

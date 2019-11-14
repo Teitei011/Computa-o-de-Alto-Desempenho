@@ -53,8 +53,10 @@ int main(int argc, char *argv[]) {
   int q = N / quantos;
   int r = N % quantos;
   std::fill_n(begin(conts), r, q + 1);
+
   std::fill(begin(conts) + r, end(conts), q);
   desls[0] = 0;
+
   std::partial_sum(begin(conts), end(conts) - 1, begin(desls) + 1);
 
   // Vetor para guardar dados do rank

@@ -7,6 +7,7 @@
 #include <numeric>
 #include <string>
 #include <tuple>
+#include <iostream>
 #include <vector>
 
 using Point = std::complex<double>;    // Um ponto no plano
@@ -126,7 +127,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < nprocs; ++i) {
       auto [row_i, col_i] = grid_coords(i, nprocs_y, nprocs_x);
-      MPI_Type_vector(nrows[row_i], ncols[col_i], resolution[0], MPI_UINT8_T,
+      MPI_Type_vector(nrows[row_i], ncols[col_i], resolution[0], MPI_INT,
                       &recv_type[i]);
       MPI_Type_commit(&recv_type[i]);
     }
@@ -136,7 +137,7 @@ int main(int argc, char *argv[]) {
 
     // Envia dados locais para rank 0
     MPI_Isend(&image_local(0, 0), nrows[row_rank] * ncols[col_rank],
-              MPI_UINT8_T, 0, 1, MPI_COMM_WORLD, &send_req);
+              MPI_INT, 0, 1, MPI_COMM_WORLD, &send_req);
 
     Image image_global;
 
