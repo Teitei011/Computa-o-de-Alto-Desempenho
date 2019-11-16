@@ -19,7 +19,7 @@ class Graph {
 public:
   Graph(int V);
   void addEdge(int origem, int destino);
-  std::vector<int> find_triangles();
+  std::vector<int> find_triangles(int argc, char *argv[]);
 };
 
 Graph::Graph(int V) { _adjLists.resize(V + 1); }
@@ -29,19 +29,19 @@ void Graph::addEdge(int origem, int destino) {
   _adjLists[destino].push_back(origem);
 }
 
-std::vector<int> Graph::find_triangles() {
+std::vector<int> Graph::find_triangles(int argc, char *argv[]) {
   std::vector<int> answer(_adjLists.size() + 1);
+  int quantos, rank;
+  // Calculo do numero de elementos por processo.
+  // Calculo realizado por todos os processos.
+  std::vector<int> conts(quantos);
+
+  int N = _adjLists.size();
 
   MPI_Init(&argc, &argv);
 
   MPI_Comm_size(MPI_COMM_WORLD, &quantos);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
-  std::vector<int> originais(quantos);
-
-  // Calculo do numero de elementos por processo.
-  // Calculo realizado por todos os processos.
-  std::vector<int> conts(quantos), desls(quantos);
 
   int q = N / quantos;
   int r = N % quantos;
@@ -49,40 +49,54 @@ std::vector<int> Graph::find_triangles() {
 
   std::fill(begin(conts) + r, end(conts), q);
 
-  for (int i = 1; i < conts.size() + 1; i++){
-    conts[i] = conts[i] * i;
-  }
-  desls[0] = 0;
+  for (std::vector<int>::iterator it = conts.begin() + 1; it != conts.end() + 2; ++it)
+   { conts[*it] = conts[*it] * (*it);}
 
 
-  // Vetor para guardar dados do rank
-  std::vector<float> dados(conts[rank]);
+   if(rank - 1 < 0){ // Para o primeiro processo
+     for (unsigned i = 0; i < conts[rank]; i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
+       int triangles{0};
 
-  // Distribuicao dos elementos para os processos
-  MPI_Scatterv(&originais[0], &conts[0], &desls[0], MPI_FLOAT, &dados[0],
-               conts[rank], MPI_INT, 0, MPI_COMM_WORLD);
+       if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
+         for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
+           int buffer{_adjLists[i][j]};
+           for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
+             int buffer2{_adjLists[i][h]};
+             for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
+               if (buffer2 == _adjLists[buffer][k]) {
+                 triangles++;
+                 break;
+               }
+             }
+           }
+         }
+       }
+       answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
+     }
+   } else{ // Para os demais processos
+     for (unsigned i = conts[rank - 1]; i < conts[rank]; i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
+       int triangles{0};
+
+       if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
+         for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
+           int buffer{_adjLists[i][j]};
+           for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
+             int buffer2{_adjLists[i][h]};
+             for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
+               if (buffer2 == _adjLists[buffer][k]) {
+                 triangles++;
+                 break;
+               }
+             }
+           }
+         }
+       }
+       answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
+     }
+   }
 
 
 
-  for (unsigned i = 0; i < _adjLists.size(); i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
-    int triangles{0};
-
-    if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
-      for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
-        int buffer{_adjLists[i][j]};
-        for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
-          int buffer2{_adjLists[i][h]};
-          for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
-            if (buffer2 == _adjLists[buffer][k]) {
-              triangles++;
-              break;
-            }
-          }
-        }
-      }
-    }
-    answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
-  }
 
   MPI_Finalize();
 
@@ -168,7 +182,7 @@ int main(int argc, char *argv[]) {
     buffer = inserir;
   }
 
-  answer = g.find_triangles();
+  answer = g.find_triangles(argc, argv);
 
   t2 = chrono::high_resolution_clock::now();
 
