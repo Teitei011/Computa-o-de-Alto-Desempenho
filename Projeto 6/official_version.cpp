@@ -36,7 +36,7 @@ std::vector<int> Graph::find_triangles(int argc, char *argv[]) {
   // Calculo realizado por todos os processos.
   std::vector<int> conts(quantos);
 
-  int N = _adjLists.size();
+  int N = _adjLists.size() + 1;
 
   MPI_Init(&argc, &argv);
 
@@ -50,49 +50,55 @@ std::vector<int> Graph::find_triangles(int argc, char *argv[]) {
   std::fill(begin(conts) + r, end(conts), q);
 
   for (std::vector<int>::iterator it = conts.begin() + 1; it != conts.end() + 2; ++it)
-   { conts[*it] = conts[*it] * (*it);}
+   { conts[*it] = conts[*it] * (*it);} // TODO: Talvez o problema se encontre aqui
+
 
 
    if(rank - 1 < 0){ // Para o primeiro processo
-     for (unsigned i = 0; i < conts[rank]; i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
-       int triangles{0};
-
-       if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
-         for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
-           int buffer{_adjLists[i][j]};
-           for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
-             int buffer2{_adjLists[i][h]};
-             for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
-               if (buffer2 == _adjLists[buffer][k]) {
-                 triangles++;
-                 break;
-               }
-             }
-           }
-         }
-       }
-       answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
-     }
+     std::cout << "De 0 até " << rank << '\n';
+     // for (unsigned i = 0; i < conts[rank]; i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
+     //   int triangles{0};
+     //
+     //   if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
+     //     for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
+     //       int buffer{_adjLists[i][j]};
+     //       for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
+     //         int buffer2{_adjLists[i][h]};
+     //         for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
+     //           if (buffer2 == _adjLists[buffer][k]) {
+     //             triangles++;
+     //             break;
+     //           }
+     //         }
+     //       }
+     //     }
+     //   }
+     //   answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
+     // }
+     //
    } else{ // Para os demais processos
-     for (unsigned i = conts[rank - 1]; i < conts[rank]; i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
-       int triangles{0};
+     std::cout << "De " << conts[rank - 1] << " até " << conts[rank] << '\n';
 
-       if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
-         for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
-           int buffer{_adjLists[i][j]};
-           for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
-             int buffer2{_adjLists[i][h]};
-             for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
-               if (buffer2 == _adjLists[buffer][k]) {
-                 triangles++;
-                 break;
-               }
-             }
-           }
-         }
-       }
-       answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
-     }
+     // for (unsigned i = conts[rank - 1]; i < conts[rank]; i++) { // edge  // #TODO: VER COMO EU VOU SEPARAR PARA CADA ITERADOR
+     //   int triangles{0};
+     //
+     //   if (_adjLists[i].size() >  1){ // Dessa forma não percorre vetores que não podem possuem triangles
+     //     for (unsigned j = 0; j < _adjLists[i].size(); j++) { // vertex
+     //       int buffer{_adjLists[i][j]};
+     //       for (unsigned h = j + 1; h < _adjLists[i].size(); h++) {       // Desta forma eu consigo pegar todas as combinacoes possiveis para os numeros
+     //         int buffer2{_adjLists[i][h]};
+     //         for (unsigned k = 0; k < _adjLists[buffer].size(); k++) {
+     //           if (buffer2 == _adjLists[buffer][k]) {
+     //             triangles++;
+     //             break;
+     //           }
+     //         }
+     //       }
+     //     }
+     //   }
+     //   answer[i] = triangles; // TODO: VER SE ELE ESTA RESPONDENDO DE                                      //FORMA CORRETA
+     // }
+
    }
 
 

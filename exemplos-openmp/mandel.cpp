@@ -2,17 +2,17 @@
 #include <array>
 #include <complex>
 #include <fstream>
-#include <mpi.h>
+#include <iostream>
 #include <numeric>
 #include <string>
 #include <tuple>
 #include <vector>
-#include <iostream>
 
 using Point = std::complex<double>;    // Um ponto no plano
 using Resolution = std::array<int, 2>; // Resolucao x (largura), y (altura)
 
 // Alguns tipos de excecao para erros de linha de comando.
+struct TooFewArgsException {};
 struct InvalidRegionException {};
 struct InvalidResolutionException {};
 
@@ -54,10 +54,6 @@ std::ostream &operator<<(std::ostream &os, Image const &image);
 // Retorna tupla (canto esquerdo inferior, canto direito superior, resolucao).
 std::tuple<Point, Point, Resolution> read_args(int argc, char *argv[]);
 
-// Calcula como dividir n elementos em nprocs processos.
-std::tuple<std::vector<int>, std::vector<int>> compute_division(int n,
-                                                                int nprocs);
-
 // Calcula a imagem de Mandelbrot para regiao delimitada por
 // lower_left e upper_right, com a resolucao especificada.
 Image mandel_block(Point lower_left, Point upper_right, Resolution resolution);
@@ -67,69 +63,36 @@ Image mandel_block(Point lower_left, Point upper_right, Resolution resolution);
 //
 
 int main(int argc, char *argv[]) {
-  int rank, nprocs;
-
-  MPI_Init(&argc, &argv);
-
-  MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
-  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-
   try {
     // Here is the interesting part.
 
     auto [lower_left, upper_right, resolution] = read_args(argc, argv);
-    auto [nrows, starting_row] = compute_division(resolution[1], nprocs);
 
-    // Tamanho vertical de um pixel.
-    auto hy = (upper_right.imag() - lower_left.imag()) / resolution[1];
+    auto image = mandel_block(lower_left, upper_right, resolution);
 
-    // Calculo dos limites da regiao do rank atual.
-    auto inferior_imag = lower_left.imag() + hy * starting_row[rank];
-    auto superior_imag = rank != nprocs - 1
-                             ? lower_left.imag() + hy * starting_row[rank + 1]
-                             : upper_right.imag();
-
-    Point local_lower_left{lower_left.real(), inferior_imag};
-    Point local_upper_right{upper_right.real(), superior_imag};
-
-    Resolution local_resolution{resolution[0], nrows[rank]};
-    auto image_local =
-        mandel_block(local_lower_left, local_upper_right, local_resolution);
-
-    MPI_Datatype row_mpi;
-    MPI_Type_contiguous(resolution[0], MPI_UINT8_T, &row_mpi);
-    MPI_Type_commit(&row_mpi);
-
-    Image image_global;
-
-    if (rank == 0) {
-      image_global.resize(resolution[1], resolution[0]);
+    if (argc < 8) {
+      throw TooFewArgsException();
     }
 
-    MPI_Gatherv(&image_local(0, 0), nrows[rank], row_mpi, &image_global(0, 0),
-                &nrows[0], &starting_row[0], row_mpi, 0, MPI_COMM_WORLD);
-
-    if (rank == 0) {
-      std::ofstream output(argv[7]);
-      if (output.good()) {
-        output << image_global;
-      } else {
-        std::cerr << "Could not open output file.\n";
-      }
+    std::ofstream output(argv[7]);
+    if (output.good()) {
+      output << image;
+    } else {
+      std::cerr << "Could not open output file.\n";
     }
   }
   // Now for some lame error handling.
-  catch (InvalidRegionException e) {
-    if (rank == 0) {
-      std::cerr << "Position of region delimiting points is wrong.\n";
-    }
+  catch (TooFewArgsException e) {
+    std::cerr << "usage: " << argv[0] << " <lowerleftreal> <lowerleftimag> "
+              << " <upperrightreal> <upperrightimag> "
+              << " <resolution-x> <resolution-y> "
+              << " <outputfilename>\n";
+  } catch (InvalidRegionException e) {
+    std::cerr << "Position of region delimiting points is wrong.\n";
   } catch (InvalidResolutionException e) {
-    if (rank == 0) {
-      std::cerr << "Image resolution is wrong.\n";
-    }
+    std::cerr << "Image resolution is wrong.\n";
   }
 
-  MPI_Finalize();
   return 0;
 }
 
@@ -143,7 +106,11 @@ std::ostream &operator<<(std::ostream &os, Image const &image) {
   return os;
 }
 
-std::tuple<Point, Point, Resolution> read_args(int, char *argv[]) {
+std::tuple<Point, Point, Resolution> read_args(int argc, char *argv[]) {
+  if (argc < 7) {
+    throw TooFewArgsException();
+  }
+
   double ar = std::stof(argv[1]);
   double ai = std::stof(argv[2]);
   double br = std::stof(argv[3]);
@@ -167,21 +134,6 @@ std::tuple<Point, Point, Resolution> read_args(int, char *argv[]) {
   return {lower_left, upper_right, resolution};
 }
 
-std::tuple<std::vector<int>, std::vector<int>> compute_division(int n,
-                                                                int nprocs) {
-  std::vector<int> conts(nprocs), desls(nprocs);
-
-  int q = n / nprocs, r = n % nprocs;
-
-  std::fill_n(begin(conts), r, q + 1);
-  std::fill(begin(conts) + r, end(conts), q);
-
-  desls[0] = 0;
-  std::partial_sum(begin(conts), end(conts) - 1, begin(desls) + 1);
-
-  return {conts, desls};
-}
-
 uint8_t mandel(Point c, uint8_t iter_max = 127) {
   uint8_t iter{0};
   Point z{c};
@@ -200,6 +152,8 @@ Image mandel_block(Point lower_left, Point upper_right, Resolution resolution) {
 
   Image image(resolution[1], resolution[0]);
 
+#pragma omp parallel for default(none)                                         \
+    shared(resolution, lower_left, hx, hy, image) schedule(static, 10)
   for (int row = 0; row < resolution[1]; ++row) {
     auto y = lower_left.imag() + row * hy + hy / 2;
     for (int col = 0; col < resolution[0]; ++col) {
